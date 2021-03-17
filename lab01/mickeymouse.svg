@@ -44,14 +44,14 @@
   <text x="492" y="12" font-size="12" text-anchor="start" fill="red">512</text>
 
 
-
-<path d="M120 220 A160 160 0 1 0 392 220,
+  <!--脑袋-->
+  <path d="M120 220 A160 160 0 1 0 392 220,
                   A90 90 0 1 0 345 180,
                   A160 160 0 0 0 167 180
                   A90 90 0 1 0 122 220"
                   stroke-width="7" stroke="url(#gradient)" fill="white" opacity="1"/>
 
-
+  <!--圆圈-->
   <circle cx="0" cy="0" r="10" stroke="" fill="url(#test5)">
     <animateMotion dur="10s" path="M120 220 A160 160 0 1 0 392 220,
                                             A90 90 0 1 0 345 180,
@@ -60,6 +60,8 @@
                                             repeatCount="indefinite" rotate="auto"/>
     <animate attributeName="r" dur="6s" repeatCount="indefinite"/>
   </circle>
+
+  <!--定义-->
 
 <defs>
 
@@ -109,7 +111,6 @@
     </stop>
 </linearGradient>
 </defs>
-
 
 </svg>
     
