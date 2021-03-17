@@ -49,10 +49,10 @@
                   A90 90 0 1 0 345 180,
                   A160 160 0 0 0 167 180
                   A90 90 0 1 0 122 220"
-                  stroke-width="5" stroke="black" fill="url(#orange_red)" opacity="0.8"/>
+                  stroke-width="7" stroke="url(#gradient)" fill="white" opacity="1"/>
 
 
-  <circle cx="0" cy="0" r="15" stroke="black" fill="black">
+  <circle cx="0" cy="0" r="10" stroke="" fill="url(#test5)">
     <animateMotion dur="10s" path="M120 220 A160 160 0 1 0 392 220,
                                             A90 90 0 1 0 345 180,
                                             A160 160 0 0 0 167 180
@@ -62,14 +62,33 @@
   </circle>
 
 <defs>
-  <linearGradient id="orange_red" x1="0%" y1="0%" x2="100%" y2="0%">
+
+<linearGradient id="test3" x1="100%" y1="100%">
+    <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="red;pink;purple;green;blue;black;white;yellow;orange;grey;silver;golden;brown" dur="4s" repeatCount="indefinite" />
+    </stop>
+    <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="#4B0082;#800080;#8B008B;#9932CC;#8A2BE2;#9400D3;#6A5ACD;#9370DB;#7B68EE;#BA55D3;#EE82EE;#DDA0DD;#D8BFD8;#E6E6FA" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;.20;0;.20;.40;.60;.80;.95" dur="4s" repeatCount="indefinite" />
+    </stop>
+</linearGradient>
+<linearGradient id="gradient" x1="100%" y1="100%">
+      <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="green;blue;red;red;black;red;red;purple;lightblue" dur="14s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="green;orange;red;purple;purple;purple;purple;blue;lightblue" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;.20;0;.20;.40;.60;.80;.95" dur="10s" repeatCount="indefinite" />
+      </stop>
+  </linearGradient>
+
+  <linearGradient id="orange_red" x1="0%" y1="60%" x2="80%" y2="0%">
     <stop offset="0%" style="stop-color:rgb(255,255,255);
     stop-opacity:1"/>
     <stop offset="15%" style="stop-color:rgb(255,255,0);
     stop-opacity:1"/>
     <stop offset="30%" style="stop-color:rgb(255,0,0);
     stop-opacity:1"/>
-    <stop offset="45%" style="stop-color:rgb(0,0,0);
     stop-opacity:1"/>
     <stop offset="60%" style="stop-color:rgb(0,255,0);
     stop-opacity:1"/>
@@ -78,6 +97,16 @@
     <stop offset="90%" style="stop-color:rgb(0,255,255);
     stop-opacity:1"/>
 
+</linearGradient>
+
+<linearGradient id="test5" x1="100%" y1="100%">
+    <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="black;green" dur="14s" repeatCount="indefinite" />
+    </stop>
+    <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="#000000;#696969;#808080;#708090;#778899;#A9A9A9;#C0C0C0;#D3D3D3;#DCDCDC;#F5F5F5;#F8F8F8;#FFF" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;.20;0;.20;.40;.60;.80;.95" dur="10s" repeatCount="indefinite" />
+    </stop>
 </linearGradient>
 </defs>
 
