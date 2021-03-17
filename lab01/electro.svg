@@ -42,13 +42,73 @@
   <text x="438" y="12" font-size="12" text-anchor="start" fill="red">448</text>
   <text x="492" y="12" font-size="12" text-anchor="start" fill="red">512</text>
 
-
+  <!--头顶-->
   <path d="M192 10 C160 64 160 64  230 64 
                    C230 64 245 60 199 118 " 
    stroke-width="10" stroke="green" fill="none" opacity="1">
+  </path>
+  <!--脑袋-->
+  <path d="M5 120 L5 384 L384 384 L384 124 L0 125" stroke-width="10" stroke="url(#test3)" fill="white" opacity="0.8"/>
 
-</path>
-  <defs>
+  <path d="M10 235 L115 235   " stroke-width="10" stroke="grey" fill="none" opacity="0.8"/>
+  <path d="M280 235 L380 235   " stroke-width="10" stroke="grey" fill="none" opacity="0.8"/>
+  <path d="M170 325 C180 365 205 365 220 325  " stroke-width="10" stroke="blue" fill="none" opacity="0.3"/>
+
+  <!--身体-->
+  <path d="M134 410 A52 20, -42, 0, 0, 120 480" stroke="black" fill="url(#gradient)" stroke-width="3"/>
+  <path d="M255 410 A52 20, 45, 0, 1, 265 480" stroke="black" fill="url(#gradient)" stroke-width="3"/>
+
+  <ellipse stroke="black" fill="url(#test5)" stroke-width="10" cx="140" cy="471" rx="24" ry="30" transform="rotate(-23,150,470)"/>
+  <ellipse  stroke="black" fill="url(#test5)" stroke-width="10" cx="245" cy="471" rx="24" ry="30" transform="rotate(23,235,470)"/>
+
+  <path d="M141 390 A64 104, 0, 0, 0, 128 445" stroke="black" fill="#none" stroke-width="3"/>
+  <path d="M162 486 h62" stroke="black" stroke-width="4"/>
+  <path d="M243 390 A64 90, 0, 0, 1, 260 445" stroke="black" fill="none" stroke-width="3"/>
+
+  <!--尾巴-->
+  <path d="M273 425 C340 390 345 405 385 425 
+                    C405 430 420 430 440 390  " 
+   stroke-width="4" stroke="black" fill="none" opacity="1"/>
+
+  <path d="M435 310 L425 330 L445 330 M443 332 L433 350      " 
+   stroke-width="5" stroke="red" fill="none" opacity="0.3"/>
+
+  <path d="M512 330 L493 341 M495 340 L505 350 L478 358  " stroke-width="5" stroke="red" fill="none" opacity="0.3"/>
+
+  <path d="M440 390 Q420 330 470 370 Q480 385 440 390   " stroke-width="" stroke="black" fill="url(#test3)" opacity="0.8"/>
+
+  <path d="M461 340 L 450 357   " stroke-width="" stroke="black" fill="none" opacity="0.8"/>
+  <path d="M475 345 L 463 365   " stroke-width="" stroke="black" fill="none" opacity="0.8"/>
+
+
+  <!--圆圈-->
+  <circle cx="0" cy="0" r="5" stroke="blue" fill="none">
+    <animateMotion dur="10s" path="M192 125 L0 128 L10 384 L135 384 
+                                   M140 384 C140 410 120 415 75 475 
+                                            C70 490 110 485 120 470 
+                                            C120 505 175 500 225 480  
+                                            C230 500 255 500 255 480  
+                                            C270 500 350 500 270 430 
+                                            C340 390 345 405 385 430 
+                                            C400 430 420 430 445 390 
+                                            C445 390 420 430 400 430 
+                                            C370 430 325 380 270 430 
+                                   L250 384 L384 384 L384 128 192 125  " 
+     repeatCount="indefinite" rotate="auto"/>
+  </circle>
+
+  <circle cx="0" cy="0" r="4" stroke="black" fill="none">
+    <animateMotion dur="6s" path="M10 235 L115 235 L10 235" repeatCount="indefinite" rotate="auto"/>
+  </circle>
+
+  <circle cx="0" cy="" r="4" stroke="black" fill="none">
+    <animateMotion dur="6s" path="M280 235 L380 235 L280 235" repeatCount="indefinite" rotate="0"/>
+  </circle>
+
+
+
+ <!--定义-->
+ <defs>
 <linearGradient id="test4" x1="100%" y1="100%">
     <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
         <animate attributeName="stop-color" values="black;green" dur="14s" repeatCount="indefinite" />
@@ -117,82 +177,5 @@
 </linearGradient>
 
   </defs>
-
-  <path d="M5 120 L5 384 L384 384 L384 124 L0 125" stroke-width="10" stroke="url(#test3)" fill="white" opacity="0.8"/>
-
-  <path d="M10 235 L115 235   " stroke-width="10" stroke="grey" fill="none" opacity="0.8"/>
-
-  <path d="M280 235 L380 235   " stroke-width="10" stroke="grey" fill="none" opacity="0.8"/>
-
-  <path d="M170 325 C180 365 205 365 220 325  " stroke-width="10" stroke="blue" fill="none" opacity="0.3"/>
-
-  <path d="M170 325 C180 365 205 365 220 325  " stroke-width="10" stroke="blue" fill="none" opacity="0.3"/>
-
-  <path d="M140 390 C140 410 120 415 75 475 
-                    C70 490 110 485 120 470 
-                    C120 470 120 460 135 405  " 
-   stroke-width="4" stroke="black" fill="url(#gradient)" opacity="0.8"/>
-
-  
-
-  <path d="M165 488 L225 488    " stroke-width="4" stroke="black" fill="none" opacity="0.8"/>
-
-
-  <path d="M128 480 C145 505 185 500 155 445 
-                    C125 430 120 460 128 480    " 
-   stroke-width="4" stroke="black" fill="url(#test5)" opacity="0.8"/>
-
-  <path d="M265 475 C250 510 205 500 230 450 
-                   C265 430 265 465 265 475    " 
-   stroke-width="4" stroke="black" fill="url(#test5)" opacity="0.8"/>
- 
-  <path d="M273 425 C340 390 345 405 385 425 
-                    C405 430 420 430 440 390  " 
-   stroke-width="4" stroke="black" fill="none" opacity="0.8"/>
-
-
-  <path d="M248 389 C255 410 260 415 315 475 
-                    C315 485 280 495 270 470 
-                    C270 470 270 470 253 400   " 
-   stroke-width="4" stroke="black" fill="url(#gradient)" opacity="0.8"/>
-
-  <path d="M435 310 L425 330 L445 330 M443 332 L433 350      " 
-   stroke-width="5" stroke="red" fill="none" opacity="0.3"/>
-
-  <path d="M512 330 L493 341 M495 340 L505 350 L478 358  " stroke-width="5" stroke="red" fill="none" opacity="0.3"/>
-
-  <path d="M440 390 Q420 330 470 370 Q480 385 440 390   " stroke-width="" stroke="black" fill="url(#test3)" opacity="0.8"/>
- 
-  <path d="M461 340 L 450 357   " stroke-width="" stroke="black" fill="none" opacity="0.8"/>
-  <path d="M475 345 L 463 365   " stroke-width="" stroke="black" fill="none" opacity="0.8"/>
-
-  <circle cx="0" cy="0" r="5" stroke="blue" fill="none">
-    <animateMotion dur="10s" path="M192 125 L0 128 L10 384 L135 384 
-                                   M140 384 C140 410 120 415 75 475 
-                                            C70 490 110 485 120 470 
-                                            C120 490 175 500 225 480  
-                                            C230 500 255 500 255 480  
-                                            C270 470 350 500 270 430 
-                                            C340 390 345 405 385 430 
-                                            C400 430 420 430 445 390 
-                                            C445 390 420 430 400 430 
-                                            C385 430 325 380 270 430 
-                                   L250 384 L384 384 L384 128 192 125  " 
-     repeatCount="indefinite" rotate="auto"/>
-  </circle>
-
-
-  <circle cx="0" cy="0" r="4" stroke="black" fill="none">
-    <animateMotion dur="6s" path="M10 235 L115 235 L10 235" repeatCount="indefinite" rotate="auto"/>
-  </circle>
-
-  <circle cx="0" cy="" r="4" stroke="black" fill="none">
-    <animateMotion dur="6s" path="M280 235 L380 235 L280 235" repeatCount="indefinite" rotate="0"/>
-  </circle>
-
-  <circle id="c1" cx="195" cy="128" r="1" stroke="red" fill="none">
-    <animate attributeName="r" to="10" dur="2s" repeatCount="indefinite"/>
-  </circle>
-
 </svg>
     
