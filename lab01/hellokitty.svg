@@ -44,19 +44,26 @@
                    A490 110 125 0 0 332 128,
                    A170 100 0 0 0 180 128,
                    A500 110 55 0 0 84 198"  
-                   stroke-width="10" stroke="#FF0000" fill="none" opacity="0.5"/>
+                   stroke-width="3" stroke="black" fill="url(#greenGradient)" opacity="0.8"/>
+    <defs>
+        <linearGradient id="greenGradient">
+       <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+      <stop offset="50%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+        </linearGradient>
+    </defs>
 
   <path d="M160 320 A10 15 1 1 0 145 310,
                     A10 15 1 0 0 165 305"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="white" opacity="0.5"/>
 
   <path d="M350 320 A10 15 1 1 0 345 310,
                     A10 15 1 0 0 365 305"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="white" opacity="0.5"/>
 
   <path d="M245 330 A8 5 0 1 0 270 350,
                     A8 5 0 1 0 245 330"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="brown" opacity="0.5"/>
 
   <path d="M420 290 A15 5 1 0 1 500 290,"   
                    stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
@@ -78,18 +85,18 @@
 
   <path d="M325 180 A10 10 0 1 0 390 180,
                     A10 10 0 1 0 325 180"   
-                   stroke-width="10" stroke="blue" fill="none" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="blue" opacity="1"/>
 
   <path d="M355 145 A5 6 0 1 0 270 128,
                     A5 6 0 1 0 325 190"   
-                   stroke-width="10" stroke="blue" fill="none" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="blue" opacity="0.5"/>
 
   <path d="M385 160 A7 7 0 1 1 440 230,
                     A10 7 0 1 1 383 200"   
-                   stroke-width="10" stroke="blue" fill="none" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="blue" opacity="0.5"/>
 
   <path d="M335 150 A15 15 0 1 0 320 175 ,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="4" stroke="black" fill="none" opacity="0.5"/>
 
   <path d="M395 180 A15 15 0 1 1 385 205 ,"   
                    stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
@@ -101,13 +108,6 @@
                                            repeatCount="indefinite"/>
   </circle>
 
-  <circle id="c2" cx="155" cy="305" r="1" stroke="red" fill="none">
-    <animate attributeName="r" to="10" dur="2s" repeatCount="indefinite"/>
-  </circle>
-
-  <circle id="c2" cx="355" cy="305" r="1" stroke="red" fill="none">
-    <animate attributeName="r" to="10" dur="2s" repeatCount="indefinite"/>
-  </circle>
 
 </svg>
     
