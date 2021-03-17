@@ -40,67 +40,86 @@
   <text x="438" y="12" font-size="12" text-anchor="start" fill="red">448</text>
   <text x="492" y="12" font-size="12" text-anchor="start" fill="red">512</text>
 
+  <defs>
+<linearGradient id="test3" x1="100%" y1="100%">
+    <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="red;pink;purple;green;blue;black;white;yellow;orange;grey;silver;golden;brown" dur="4s" repeatCount="indefinite" />
+    </stop>
+    <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="#4B0082;#800080;#8B008B;#9932CC;#8A2BE2;#9400D3;#6A5ACD;#9370DB;#7B68EE;#BA55D3;#EE82EE;#DDA0DD;#D8BFD8;#E6E6FA" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;.20;0;.20;.40;.60;.80;.95" dur="4s" repeatCount="indefinite" />
+    </stop>
+</linearGradient>
+  </defs>
+
+    <defs>
+        <linearGradient id="greenGradient">
+        </linearGradient>
+<linearGradient id="gradient" x1="100%" y1="100%">
+      <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="green;blue;red;red;black;red;red;purple;lightblue" dur="14s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="green;orange;red;purple;purple;purple;purple;blue;lightblue" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;.20;0;.20;.40;.60;.80;.95" dur="10s" repeatCount="indefinite" />
+      </stop>
+  </linearGradient>
+    </defs>
   <path d="M84 195 A195 153 0 1 0 428 195,
                    A490 110 125 0 0 332 128,
                    A170 100 0 0 0 180 128,
                    A500 110 55 0 0 84 198"  
-                   stroke-width="3" stroke="black" fill="url(#greenGradient)" opacity="0.8"/>
-    <defs>
-        <linearGradient id="greenGradient">
-       <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
-      <stop offset="50%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
-        </linearGradient>
-    </defs>
+                   stroke-width="1" stroke="black" fill="url(#greenGradient)" opacity="1"/>
 
   <path d="M160 320 A10 15 1 1 0 145 310,
                     A10 15 1 0 0 165 305"   
-                   stroke-width="5" stroke="black" fill="white" opacity="0.5"/>
+                   stroke-width="3" stroke="url(#gradient)" fill="black" opacity="1"/>
 
   <path d="M350 320 A10 15 1 1 0 345 310,
                     A10 15 1 0 0 365 305"   
-                   stroke-width="5" stroke="black" fill="white" opacity="0.5"/>
+                   stroke-width="3" stroke="url(#gradient)" fill="black" opacity="1"/>
 
   <path d="M245 330 A8 5 0 1 0 270 350,
                     A8 5 0 1 0 245 330"   
-                   stroke-width="5" stroke="black" fill="brown" opacity="0.5"/>
+                   stroke-width="1" stroke="black" fill="brown" opacity="1"/>
 
   <path d="M420 290 A15 5 1 0 1 500 290,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="2" stroke="black" fill="none" opacity="1"/>
 
   <path d="M420 320 A20 4 6 0 1 480 330,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="2" stroke="black" fill="none" opacity="1"/>
 
   <path d="M410 350 A30 10 25 0 1 470 384,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="2" stroke="black" fill="none" opacity="1"/>
 
   <path d="M15 290 A20 2 0 0 1 90 290,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="2" stroke="black" fill="none" opacity="1"/>
 
   <path d="M40 335 A10 2 0 1 1 95 330,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="2" stroke="black" fill="none" opacity="1"/>
 
   <path d="M50 390 A1 0 0 1 1 115 360,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="2" stroke="black" fill="none" opacity="1"/>
 
   <path d="M325 180 A10 10 0 1 0 390 180,
                     A10 10 0 1 0 325 180"   
-                   stroke-width="5" stroke="black" fill="blue" opacity="1"/>
+                   stroke-width="5" stroke="black" fill="url(#gradient)" opacity="1"/>
 
   <path d="M355 145 A5 6 0 1 0 270 128,
                     A5 6 0 1 0 325 190"   
-                   stroke-width="5" stroke="black" fill="blue" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="url(#gradient)" opacity="1"/>
 
   <path d="M385 160 A7 7 0 1 1 440 230,
                     A10 7 0 1 1 383 200"   
-                   stroke-width="5" stroke="black" fill="blue" opacity="0.5"/>
+                   stroke-width="5" stroke="black" fill="url(#gradient)" opacity="1"/>
 
   <path d="M335 150 A15 15 0 1 0 320 175 ,"   
-                   stroke-width="4" stroke="black" fill="none" opacity="0.5"/>
+                   stroke-width="4" stroke="black" fill="none" opacity="1"/>
 
   <path d="M395 180 A15 15 0 1 1 385 205 ,"   
-                   stroke-width="5" stroke="black" fill="none" opacity="0.5"/>
-  <circle cx="0" cy="0" r="6" stroke="blue" fill="none">
+                   stroke-width="4" stroke="black" fill="none" opacity="1"/>
+
+  <circle cx="0" cy="0" r="10" stroke="url(#gradient)" fill="url(#test3)">
     <animateMotion dur="10s" path="M84 195 A195 153 0 1 0 428 195,
                                            A500 110 125 0 0 332 128,
                                            A170 100 0 0 0 180 128,
