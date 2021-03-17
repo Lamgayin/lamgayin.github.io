@@ -118,7 +118,7 @@
 
   </defs>
 
-  <path d="M5 120 L5 384 L384 384 L384 124 L0 125" stroke-width="10" stroke="url(#test3)" fill="url(#yellow)" opacity="0.8"/>
+  <path d="M5 120 L5 384 L384 384 L384 124 L0 125" stroke-width="10" stroke="url(#test3)" fill="white" opacity="0.8"/>
 
   <path d="M10 235 L115 235   " stroke-width="10" stroke="grey" fill="none" opacity="0.8"/>
 
@@ -170,7 +170,7 @@
     <animateMotion dur="10s" path="M192 125 L0 128 L10 384 L135 384 
                                    M140 384 C140 410 120 415 75 475 
                                             C70 490 110 485 120 470 
-                                            C150 480 175 500 225 480  
+                                            C120 490 175 500 225 480  
                                             C230 500 255 500 255 480  
                                             C270 470 350 500 270 430 
                                             C340 390 345 405 385 430 
