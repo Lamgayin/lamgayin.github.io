@@ -91,7 +91,7 @@
 
 		<script>
 			//產生SVG
-			function mkSVG(container, bosses, data){
+			function mkSVG(bosses, data){
 				const treemap = document.createElement('div')
 				
 				const margin = {top: 10, right: 0, bottom: 0, left: 10};
@@ -269,7 +269,7 @@
 
 								
 							}
-							treemapContainer.appendChild(mkSVG(treemapContainer, allBoss, d3Json))
+							mkSVG(allBoss, d3Json)
 							
 		
 			})
