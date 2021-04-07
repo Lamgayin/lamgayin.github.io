@@ -210,6 +210,7 @@
 		
 		<script>
 						d3.csv("https://raw.githubusercontent.com/Lamgayin/vis2021s/master/lab02/data.csv",function(csvdata){
+							const treemapContainer = document.getElementById('treemap')
 							const allBoss = []
 							const d3Json = {
 								children: [],
