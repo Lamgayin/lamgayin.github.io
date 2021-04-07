@@ -217,7 +217,7 @@
 							}
 							
 							//先由小到大排列，算出名次、級距、再算出分數
-							const mapping = new Array(csvdata.length).fill(-1)
+							const mapping = new Array(35).fill(-1)
 							const scoreSort = csvdata.sort((x,y) => {
 								let a = isNaN(parseFloat(x[3])) ? 30 : parseFloat(x[3])
 								let b = isNaN(parseFloat(y[3])) ? 30 : parseFloat(y[3])
