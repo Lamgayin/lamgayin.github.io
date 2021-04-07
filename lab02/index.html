@@ -91,7 +91,7 @@
 
 		<script>
 			//產生SVG
-			function mkSVG(bosses, data){
+			function mkSVG(container, bosses, data){
 				const treemap = document.createElement('div')
 				
 				const margin = {top: 10, right: 0, bottom: 0, left: 10};
@@ -209,17 +209,42 @@
 		</script>
 		
 		<script>
-						d3.csv("https://raw.githubusercontent.com/Lamgayin/vis2021s/master/lab02/data.csv",function(csvdata){
-							const treemapContainer = document.getElementById('treemap')
+			window.addEventListener('load', () => {
+				const treemapContainer = document.getElementById('treemap')
+				
+				document.getElementById('dropfile').addEventListener('dragover', (evt) => {
+					evt.preventDefault()
+				})
+				
+				document.getElementById('dropfile').addEventListener('drop', (evt) => {
+					evt.preventDefault()
+					
+					const { files } = evt.dataTransfer
+					
+					if(files.length){
+						if(treemapContainer.innerHTML.length){
+							treemapContainer.innerHTML = ''
+						}
+					
+						
+						const csvFile= files[0]
+					
+						
+						//讀取csv
+						const fr = new FileReader()
+						
+						fr.onload = () => {
 							const allBoss = []
+							const studentArr = fr.result.split('\n').map(e => e.split(','))
+							
 							const d3Json = {
 								children: [],
 								name: 'vis2021s'
 							}
 							
 							//先由小到大排列，算出名次、級距、再算出分數
-							const mapping = new Array(35).fill(-1)
-							const scoreSort = csvdata.sort((x,y) => {
+							const mapping = new Array(41).fill(-1)
+							const scoreSort = studentArr.sort((x,y) => {
 								let a = isNaN(parseFloat(x[3])) ? 30 : parseFloat(x[3])
 								let b = isNaN(parseFloat(y[3])) ? 30 : parseFloat(y[3])
 								
@@ -244,7 +269,7 @@
 							
 							
 							
-							for(let i of csvdata){
+							for(let i of studentArr){
 								const bossName = i[2].length ? i[2] : (i[1] == '全年' ? '未知' : '非全年')
 								
 								
@@ -269,9 +294,17 @@
 
 								
 							}
-							mkSVG(allBoss, d3Json)
+							treemapContainer.appendChild(mkSVG(treemapContainer, allBoss, d3Json))
 							
-		
+						}
+						
+						fr.readAsText(csvFile)
+					}
+					
+				})
+
+				
+			
 			})
 		</script>
 	
