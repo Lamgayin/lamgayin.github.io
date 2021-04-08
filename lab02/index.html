@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -21,8 +22,8 @@
 		    }
 
 			html, body {
-				height: 105%;
-				width: 105%;
+				height: 100%;
+				width: 120%;
 				padding: 0;
 				margin: 0;
 				padding: 10px;
@@ -65,15 +66,15 @@
 			}
 			
 			#treemap {
-				height: 103%;
-				width: 100%;
+				height: 95%;
+				width: 120%;
 			}
 		</style>
 	</head>
 	<body>
 		<div>lab02 treemap</div>
 		<div>
-			<text ><a href="https://raw.githubusercontent.com/Lamgayin/vis2021s/master/lab02/data.csv">臺北100-109年 各觀光場所人數統計</a></text>
+			<text ><a href="data.csv">臺北100-109年 各觀光場所人數統計</a></text>
                         <br> 
                         <text ><a href="https://stat.taiwan.net.tw/">資料來源：交通部觀光局觀光統計資料庫</a></text>
 
@@ -97,8 +98,8 @@
 			function mkSVG(container, bosses, data){
 				const treemap = document.createElement('div')
 				
-				const margin = {top: 10, right: 0, bottom: 0, left: 10};
-				const height = container.clientHeight+100;
+				const margin = {top: 10, right: 0, bottom: 10, left: 10};
+				const height = container.clientHeight;
 				const width = container.clientWidth;
 				
 				const svg = d3.select(treemap)
@@ -138,8 +139,8 @@
 					.append('rect')
 					 .attr('x', ({x0}) => x0)
 					 .attr('y', ({y0}) => y0)
-					 .attr('width', ({x0,x1}) => x1-x0-5)
-					 .attr('height', ({y0,y1}) => y1-y0-5)
+					 .attr('width', ({x0,x1}) => x1-x0)
+					 .attr('height', ({y0,y1}) => y1-y0)
 					 .style('stroke', 'red')
 					 .style('fill', ({parent}) => color(parent.data.name))
 					 .style('opacity', (d) => opacity(d.data.value))
