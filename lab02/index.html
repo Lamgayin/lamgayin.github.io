@@ -14,11 +14,11 @@
 		      border: solid black 1px;
 		      margin: 5px;
 		      padding: 10px;
-		      background-color: rgba(255, 255, 128, 0.1);
+		      background-color: rgba(255, 255, 255, 255);
 		    }
 
 		    div:hover, ul:hover {
-		      background-color: rgba(255, 128, 128, 0.1);
+		      background-color: rgba(0, 0, 0, 0.1);
 		    }
 
 			html, body {
@@ -124,12 +124,15 @@
 				//設定指導教授顏色
 				const color = d3.scaleOrdinal()
 								.domain(bosses)
-								
+									.range([ "#cd84f1", "#ffcccc", "#ff4d4d", "#ffaf40", "#fffa65", "#32ff7e", "#7efff5", "#18dcff", "#7d5fff", "#4b4b4b",
+											 "#53c653", "#ff8000","#53c653", "#ff8000","#53c653", "#ff8000","#53c653", "#ff8000","#53c653", "#ff8000",])
+				
 				//設定透明度，分數越低越透明
 				const opacity = d3.scaleLinear()
 								.domain([100, 50])
 								.range([1,.1])
-								.range([ "#000000", "#B7FF4A", "#FF8000", "#2894FF", "#3A006F", "#F9F900", "#B7FF4A", "#FF0000", "#272727"])//化長方形
+						
+				
 				svg
 					.selectAll('rectangle')
 					.data(d3ds.leaves())
