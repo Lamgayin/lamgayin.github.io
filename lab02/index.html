@@ -129,9 +129,7 @@
 				const opacity = d3.scaleLinear()
 								.domain([100, 50])
 								.range([1,.1])
-								.range([ "#fc5c65", "#fd9644", "#fed330", "#26de81", "#2bcbba", "#45aaf2", "#4b7bec", "#a55eea", "#d1d8e0","#778ca3",
-		 "#7bed9f", "#70a1ff", "#5352ed", "#dfe4ea", "#747d8c", "#eccc68", "#ff7f50", "#ff6b81", "#a4b0be","#57606f",
-		 "#c56cf0", "#ffb8b8", "#ff3838", "#ff9f1a", "#fff200", "#32ff7e", "#7efff5"])//化長方形
+								.range([ "#fc5c65", "#fd9644", "#fed330", "#26de81", "#2bcbba", "#45aaf2", "#4b7bec", "#a55eea", "#d1d8e0","#778ca3","#7bed9f", "#70a1ff", "#5352ed", "#dfe4ea", "#747d8c", "#eccc68", "#ff7f50", "#ff6b81", "#a4b0be","#57606f","#c56cf0", "#ffb8b8", "#ff3838", "#ff9f1a", "#fff200", "#32ff7e", "#7efff5"])//化長方形
 				svg
 					.selectAll('rectangle')
 					.data(d3ds.leaves())
