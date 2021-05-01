@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://lamgayin.github.io/vis2021s/lab05/index.html -->
+<html lang="zh-Hant-TW">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Lab</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script><!-- v6.5
+    <c.0 -->
+    <style type="text/css">
+div.bar {
+	border: 1px black solid;
+	padding: 10px;
+	margin: 0px 10px 10px 5px;
+	display: inline-block;
+	width: 10px;
+	height: 75px;
+	vertical-align: bottom;
+	font-size: 5px;
+	font-style: italic;
+}
+div:hover {
+	transition: width, height;
+	transition-duration: 0.6s;
+	width: 30px;
+	height: 20px;
+	background-color: pink;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.7);
+}
+body {
+	border: 1px black dotted;
+	padding: 10px;
+}
+</style>
+    </head>
+    <body>
+<script type="text/javascript">
+        d3.text("./data.csv", function (data) {
+            var parseCSV = d3.csv.parseRows(data);
+			var total=0;
+
+			
+            d3.select("body")
+                .selectAll("div")
+                .data(parseCSV)
+                .enter()
+                .append("div")
+		.filter(function(d,i){
+                    return (i!=0);
+                })
+		.attr("class", "bar")
+                .style("height", function (d) {
+		    var barHeight = 5 * (d[1]);
+                    return barHeight + 'px';
+                })
+		.style("background-color", function (d) {
+		    var t = (d[1]/39)+0.3;
+                    return 'rgba(0,200,150,'+t+')';
+                })
+		.append("text")
+		.text(function(d,i){
+		return d[1] + 'px';                
+		})
+        	});
+
+    </script>
+
+</body>
+</html>

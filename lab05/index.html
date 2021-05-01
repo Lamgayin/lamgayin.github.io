@@ -1,68 +1,49 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-Hant-TW">
-<head>
-    <meta charset="utf-8">
-    <title>Lab</title>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script> <!-- v6.5
+	<head>
+	<meta charset="utf-8">
+	<title>Lab</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script><!-- v6.5
     <c.0 -->
-    <style type="text/css">
-    	div.bar {
-    		border: 1px black solid;
-    		padding: 10px;
-    		margin: 0px 10px 10px 5px;
-    		display: inline-block;
-    		width: 10px;
-    		height: 75px;
-		vertical-align: bottom; 
-		font-size: 5px;
-		font-style: italic;
-			
-		}
-    	body 	{
-		border: 1px black dotted;
-    		padding: 10px;
-		}
-		
-	div:hover {
-            transition: width, height;
-            transition-duration: 0.6s;
-            width: 30px;
-            height: 20px;
-	    background-color: pink;
-	    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.7);
-        }
-    </style>
-</head>
-<body>
-    <script type="text/javascript">
-        d3.text("./data.csv", function (data) {
-            var parseCSV = d3.csv.parseRows(data);
-			var total=0;
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<style type="text/css">
+iframe:hover, div:hover, ul:hover, h1:hover, h3:hover, h5:hover {
+	background-color: rgba(128, 100, 100, 0.1);
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	box-shadow: 0px 0px 5px 5px rgba(128, 255, 255, 0.5);
+}
+iframe {
+	border: 1px black pink;
+}
+h5 {
+	padding: 10px 10px 10px 10px;
+}
 
-			
-            d3.select("body")
-                .selectAll("div")
-                .data(parseCSV)
-                .enter()
-                .append("div")
-		.filter(function(d,i){
-                    return (i!=0);
-                })
-		.attr("class", "bar")
-                .style("height", function (d) {
-		    var barHeight = 5 * (d[1]);
-                    return barHeight + 'px';
-                })
-		.style("background-color", function (d) {
-		    var t = (d[1]/39)+0.3;
-                    return 'rgba(0,200,150,'+t+')';
-                })
-		.append("text")
-		.text(function(d,i){
-		return d[1] + 'px';                
-		})
-        	});
-
-    </script>
+</style>
+	</head>
+	<body>
+<div>
+      <h1>
+    <marquee direction="right">
+        SVG写法
+        </marquee>
+  </h1>
+      <iframe src="./index1.html" width="100%" height="250" seamless scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+    </div>
+<div>
+      <h1>
+    <marquee direction="right">
+        DIV写法
+        </marquee>
+  </h1>
+      <iframe src="./index2.html" width="100%" height="300" seamless scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+    </div>
+<div>
+      <h5>参考资料</h5>
+      <h5>chapter 06 Drawing with Data <br/>
+    <a href="https://myweb.ntut.edu.tw/~tjhsieh/c/vis/vis2021s/d3-book-2.0.3/chapter06/index.html">https://myweb.ntut.edu.tw/~tjhsieh/c/vis/vis2021s/d3-book-2.0.3/chapter06/index.html</a></h5>
+      <h5>vis2021s index.html <br/>
+    <a href="https://lamgayin.github.io/vis2021s/index.html">https://lamgayin.github.io/vis2021s/index.html</a></h5>
+    </div>
+</body>
 </html>
-  
