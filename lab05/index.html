@@ -9,34 +9,32 @@
     	div.bar {
     		border: 1px black solid;
     		padding: 10px;
-    		margin: 0px 5px 5px 5px;
+    		margin: 0px 10px 10px 5px;
     		display: inline-block;
     		width: 10px;
     		height: 75px;
-			vertical-align: bottom; 
-			font-size: 5px;
-			font-style: italic;
+		vertical-align: bottom; 
+		font-size: 5px;
+		font-style: italic;
 			
 		}
-    	body {
-			border: 1px black dotted;
+    	body 	{
+		border: 1px black dotted;
     		padding: 10px;
 		}
 		
-		div:hover {
+	div:hover {
             transition: width, height;
             transition-duration: 0.6s;
             width: 30px;
             height: 20px;
-			background-color: pink;
-			box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.7);
+	    background-color: pink;
+	    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
     <script type="text/javascript">
-		
-        // Your beautiful D3 code will go here
         d3.text("./data.csv", function (data) {
             var parseCSV = d3.csv.parseRows(data);
 			var total=0;
@@ -47,22 +45,22 @@
                 .data(parseCSV)
                 .enter()
                 .append("div")
-				.filter(function(d,i){
+		.filter(function(d,i){
                     return (i!=0);
                 })
-				.attr("class", "bar")
+		.attr("class", "bar")
                 .style("height", function (d) {
-					var barHeight = 5 * (d[1]);
+		    var barHeight = 5 * (d[1]);
                     return barHeight + 'px';
                 })
-			 	.style("background-color", function (d) {
-					var t = (d[1]/39)+0.3;
+		.style("background-color", function (d) {
+		    var t = (d[1]/39)+0.3;
                     return 'rgba(0,200,150,'+t+')';
                 })
-				.append("text")
-				.text(function(d,i){
-				    return d[1] + 'px';                
-				})
+		.append("text")
+		.text(function(d,i){
+		return d[1] + 'px';                
+		})
         	});
 
     </script>
