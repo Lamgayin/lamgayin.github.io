@@ -13,7 +13,7 @@ body {
 rect:hover {
 	transition: width, height;
 	transition-duration: 0.5s;
-	width: 15px;
+	width: 25px;
 	height: 500px;
 	background-color: pink;
 	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
@@ -22,7 +22,7 @@ rect:hover {
     </head>
     <body>
     <script type="text/javascript">
-		var w=700;
+		var w=1000;
 		var h=200;
 		var barPadding = 10;
 		d3.text("data.csv",function(data){
@@ -89,7 +89,7 @@ rect:hover {
 								  return h - (d * 4)-3;
 							   })
 							   .attr("font-family", "sans-serif")
-							   .attr("font-size", "5px")
+							   .attr("font-size", "6px")
 							   .attr("fill", "black");
     			
 		});
