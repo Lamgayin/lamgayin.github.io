@@ -1,98 +1,70 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://lamgayin.github.io/vis2021s/lab05/index.html -->
 <html lang="zh-Hant-TW">
     <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Lab</title>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script><!-- v6.5
     <c.0 -->
-    <style type="text/css">
-body {
-	border: 1px black dotted;
-	padding: 10px;
-}
-rect:hover {
-	transition: width, height;
-	transition-duration: 0.5s;
-	width: 25px;
-	height: 500px;
-  	background-color: #000 !important;
-	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.7);
-}
-</style>
+	<style type="text/css">
+		div.bar {
+			border: 1px black solid;
+			padding: 10px;
+			margin: 0px 5px 0px 5px;
+			display: inline-block;
+			width: 10px;
+			height: 400px;
+			vertical-align: bottom;
+			font-size: 5px;
+			font-style: italic;
+		}
+		div:hover{
+			transition: width, height;
+			transition-duration: 0.6s;
+			width: 30px;
+			height: 20px;
+			background-color: indianred !important;
+			box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.7);
+		}
+
+/*
+		body {
+			border: 1px black dotted;
+			padding: 10px;
+		}*/
+	</style>
     </head>
     <body>
-    <script type="text/javascript">
-		var w=800;
-		var h=200;
-		var barPadding = 10;
-		d3.text("data.csv",function(data){
+<script type="text/javascript">
+        d3.text("./data.csv", function (data) {
+            var parseCSV = d3.csv.parseRows(data);
+			var total=0;
+
 			
-			var dataset=[]; 
-			/*读进csv的每一行                          */
-			/*假设 csv格式 为 banana,apple,pear        */
-			/*              1     ,    0,    1        */
-			/*那么读进来则是0：["banana","apple","pear"]*/
-			/*那么读进来则是1：["1","0","1"]            */
-			var parseCSV = d3.csv.parseRows(data);
-			
-			for(var i=0;i<parseCSV.length;i++)
-			{
-				/*myobj则是读取数组中的第一行*/
-				/*如：["1","0","1"]       */
-				var myobj = parseCSV[i];
-				console.log(myobj);
-				/*dataset[0]则是读取这一行的第0列的资料*/
-				/*如上：0*/
-				dataset[i] =myobj[1];		
-			}
-			
-			var svg = d3.select("body")
-						.append("svg")
-						.attr("width",w)
-						.attr("height",h)
-			
-			var rect = svg.selectAll("rect")
-						  .data(dataset)
-						  .enter()
-						  .append("rect")
-						  .filter(function(d,i){
-								return (i!=0);
-							})
-						  /*rect ，x代表矩形的起始点x轴位置*/
-						  /*rect ，y代表矩形的起始点y轴位置*/
-						  /**/
-						  .attr("x",function(d,i){return i*(w/dataset.length);})
-						  .attr("y",function(d){return h-(d*4);})
-						  .attr("width",function(d){return w/dataset.length-barPadding;})
-						  .attr("height",function(d,i){return 5*d})
-						  .attr("fill",function(d){
-							  var t = (d/39)+0.1;
-							  return 'rgba(0,130,150,'+t+')';
-						  })
-						  .attr("stroke","black")
-						  .attr("storke-width",1);
-			
-			var textRect = svg.selectAll("text")
-							  .data(dataset)
-							  .enter()
-							  .append("text")	
-							  .filter(function(d,i){
-								return (i!=0);
-							  })
-							  .text(function(d){
-								  return d;
-							  })
-							  .attr("x", function(d, i) {
-								  return i * (w / dataset.length)+5;
-							   })
-							   .attr("y", function(d) {
-								  return h - (d * 4)-3;
-							   })
-							   .attr("font-family", "sans-serif")
-							   .attr("font-size", "6px")
-							   .attr("fill", "black");
-    			
-		});
+            d3.select("body")
+                .selectAll("div")
+                .data(parseCSV)
+                .enter()
+                .append("div")
+				.filter(function(d,i){
+					return (i!=0);
+				})
+				.attr("class", "bar")
+				.style("height", function (d) {
+					var barHeight = 5 * (d[1]);
+					return barHeight + 'px';
+				})
+				.style("background-color", function (d) {
+					var t = (d[1]/39)+0.3;
+					return 'rgba(0,130,150,'+t+')';
+				})
+				.append("text")
+				.text(function(d,i){
+					return "(组别："+d[0]+",频率:"+d[1] +")";                
+				})
+        	});
+
     </script>
+
 </body>
 </html>
