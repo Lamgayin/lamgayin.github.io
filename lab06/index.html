@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>lab 06</title>
+  <title>lab 08</title>
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <style type="text/css">
     svg {
@@ -41,7 +41,7 @@
   <script>
     var margin = { top: 20, right: 100, bottom: 35, left: 30 };
 
-    var width = 8000 - margin.left - margin.right,
+    var width = 6400 - margin.left - margin.right,
       height = 600 - margin.top - margin.bottom;
     var xyIni = 100;
 
@@ -80,8 +80,8 @@
         .domain([0, d3.max(dataset, function (d) { return d3.max(d, function (d) { return d.y0 + d.y; }); })])
         .range([height, 0]);
 
-      var colors = ["#EE3239", "#5EAA5F", "#FECE00", "#9D6AB9", "#3D82AB"];
-
+      var colors = ["#e74c3c", "#f1c40f", "#3498db", "#2ecc71", "#8e44ad"];
+/*#cd84f1", "#ffcccc", "#ff4d4d", "#ffaf40", "#fffa65",#32ff7e", "#7efff5", "#18dcff", "#7d5fff","#ff3838","#53c653", "#ff8000"*/
 
       // Define and draw axes
       var yAxis = d3.svg.axis()
@@ -99,12 +99,14 @@
         .attr("class", "y axis")
         .attr("transform", "translate(" + xyIni + " ,0" + ")")
         .style("fill", "black")
+	  	.style("font-size","15px")
         .call(yAxis);
 
       svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(" + xyIni + "," + height + ")")
         .style("fill", "black")
+	    .style("font-size","11px")
         .call(xAxis);
 
 
@@ -114,7 +116,7 @@
         .enter().append("g")
         .attr("class", "cost")
         .style("fill", function (d, i) { return colors[i]; })
-        .style("opacity", "0.85");
+        .style("opacity", "0.95");
 
       var rect = groups.selectAll("rect")
         .data(function (d) { return d; })
