@@ -237,17 +237,17 @@
 			       .attr('opacity', 0)
 			       .transition()
 			       .delay(function(d){
-			     	   // return (d.begin - d.dur / 2) * 1000;
-						return d.begin * 1000;
+			     	   return (d.begin - d.dur / 2) * 1000;
+					//	return d.begin * 1000;
 			       })
 				   .duration(0.1)
 			       .attr('opacity', 1)
 			       .transition()
 				   .delay(function(d){
-					// return (d.begin - d.dur / 2) * 1000;
-						return d.dur * 1000;
+					return (d.begin - d.dur / 2) * 1000;
+						//return d.dur * 1000;
 			        })
-					.duration(0.2)
+					.duration(0.4)
 			       .attr('opacity', 0)
 			       ;
 
