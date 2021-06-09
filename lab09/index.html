@@ -34,11 +34,10 @@
 
 		svg text {
 			/* font-weight: 100; */
-			font-size: 28px;
+			font-size: 35px;
 		    fill: white;
 				background-color: black;
-		    stroke: black;
-		    font-family: 'Noto Sans JP', 'Noto Serif JP', 'MS PGothic';
+		    stroke: ;
 		}
 
 		#clock {
@@ -151,10 +150,10 @@
 			      .attr('y', 30)
 			      .attr('opacity', 0)
 			      .transition()
-			      .duration(1000)
+			      .duration(2000)
 			      .attr('opacity', 1)
 			      .transition()
-			      .duration(1000)
+			      .duration(2000)
 			      .attr('opacity', 0)
 			      .remove()
 			      ;
@@ -248,7 +247,7 @@
 					// return (d.begin - d.dur / 2) * 1000;
 						return d.dur * 1000;
 			        })
-					.duration(0.1)
+					.duration(0.2)
 			       .attr('opacity', 0)
 			       ;
 
