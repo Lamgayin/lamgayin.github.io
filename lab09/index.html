@@ -5,9 +5,10 @@
     <meta charset='utf-8'>
     <title>Lab</title>
     <style>
-
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
 body {
     background-color: rgba(255, 255, 0, 0.1);
+    font-family: 'Noto Serif JP', serif;
 }
 
 svg {
@@ -115,15 +116,14 @@ window.addEventListener('load', function() {
             .attr('height', HEIGHT)
             .append('text')
             .text('Play')
-            .attr('x', WIDTH / 2)
-            .attr('y', HEIGHT / 2)
-            .attr('font-size', '60pt')
+            .attr('x',0)
+            .attr('y', 60)
+            .attr('font-size', '40pt')
             .on('click', function() {
                 document.getElementById('play').style.display = 'none';
                 document.getElementById('video').style.display = 'inline';
                 document.getElementById('video').play();
                 playSubtitle();
-                //playTime();
             });
     });
 });
@@ -143,9 +143,6 @@ function playSubtitle() {
         })
         .attr('font-size', '30pt')
         .attr('fill', 'black')
-        .attr('stroke', function(d) {
-            return d.subtitle.includes('迷失') ? 'red' : 'none';
-        })
         .attr('x', WIDTH / 2)
         .attr('y', 700)
         .attr('text-anchor', 'middle')
@@ -160,33 +157,9 @@ function playSubtitle() {
         .delay(function(d) {
             return d.duration * 1000;
         })
-        .duration(function(d) {
-            return d.subtitle.includes('迷失') ? 500 : 0;
-        })
         .attr('opacity', 0);
 }
 
-//function playTime() {
-//    var currentTime = 0;
-
-//    var duration = parseInt(document.getElementById('video').duration);
-
-//    updateClock = setInterval(() => {
-//        var clockCurrentTime = getClock(currentTime);
-//        var clockDuration = getClock(duration);
-//        d3.select('#subtitle')
-//            .append('text')
-//            .text(clockCurrentTime + ' / ' + clockDuration)
-//            .attr('x', WIDTH - 120)
-//            .attr('y', 42)
-//            .attr('opacity', 1)
-//            .transition()
-//            .delay(1000)
-//            .duration(0)
-//            .remove();
-//        ++currentTime;
-//    }, 1000);
-//}
 
 function getClock(time) {
     if (time % 60 < 10) {
