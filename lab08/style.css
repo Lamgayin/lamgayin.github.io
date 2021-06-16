@@ -420,7 +420,7 @@
 }
 @keyframes draw-xin-1 {
   0% {
-    stroke-dashoffset: 75;
+    stroke-dashoffset: 0;
   }
 
   14% {
