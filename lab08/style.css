@@ -415,16 +415,16 @@
 .line-xin-1 {
   clip-path: url(#xin-1);
 
-  stroke-dasharray: 75;
+  stroke-dasharray: 250;
   animation-name: draw-xin-1;
 }
 @keyframes draw-xin-1 {
   0% {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 300;
   }
 
-  14% {
-    stroke-dashoffset: 250;
+  20% {
+    stroke-dashoffset: 0;
   }
 }
 
@@ -436,7 +436,7 @@
 }
 @keyframes draw-xin-2 {
   0%,
-  14% {
+  20% {
     stroke-dashoffset: 250;
   }
 
@@ -444,7 +444,6 @@
     stroke-dashoffset: 0;
   }
 }
-
 .line-xin-3 {
   clip-path: url(#xin-3);
 
